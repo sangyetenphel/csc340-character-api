@@ -11,31 +11,38 @@ public class Character {
   private Long characterId;
 
   @Column(nullable = false)
-  public String name;
+  private String name;
 
   @Column(nullable = false)
   private String description;
 
   private String universe;
-
+  private String role;
   private String species;
+  private String powerLevel;
 
   public Character() {
   }
 
-  public Character(String name, String description, String universe, String species) {
+  public Character(String name, String description, String universe,
+                   String role, String species, String powerLevel) {
     this.name = name;
     this.description = description;
     this.universe = universe;
+    this.role = role;
     this.species = species;
+    this.powerLevel = powerLevel;
   }
 
-  public Character(Long characterId, String name, String description, String universe, String species) {
+  public Character(Long characterId, String name, String description,
+                   String universe, String role, String species, String powerLevel) {
     this.characterId = characterId;
     this.name = name;
     this.description = description;
     this.universe = universe;
+    this.role = role;
     this.species = species;
+    this.powerLevel = powerLevel;
   }
 
   public Long getCharacterId() {
@@ -70,6 +77,14 @@ public class Character {
     this.universe = universe;
   }
 
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
+  }
+
   public String getSpecies() {
     return species;
   }
@@ -78,4 +93,11 @@ public class Character {
     this.species = species;
   }
 
+  public String getPowerLevel() {
+    return powerLevel;
+  }
+
+  public void setPowerLevel(String powerLevel) {
+    this.powerLevel = powerLevel;
+  }
 }

@@ -1,56 +1,54 @@
 package com.csc340.characters_api;
 
-import org.springframework.stereotype.Service;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public class CharacterService {
 
-    private final CharacterRepository repository;
+  private final CharacterRepository characterRepository;
 
-    public CharacterService(CharacterRepository repository) {
-        this.repository = repository;
-    }
+  public CharacterService(CharacterRepository characterRepository) {
+    this.characterRepository = characterRepository;
+  }
 
-    public List<Character> getAllCharacters() {
-        return repository.findAll();
-    }
+  public List<Character> getAllCharacters() {
+    return characterRepository.findAll();
+  }
 
-    public Character getCharacterById(Long id) {
-        return repository.findById(id).orElse(null);
-    }
+  public Character createCharacter(Character character) {
+    return characterRepository.save(character);
+  }
 
-    public Character addCharacter(Character character) {
-        return repository.save(character);
-    }
+  public Character getCharacterById(Long id) {
+    return characterRepository.findById(id).orElse(null);
+  }
 
-    public Character updateCharacter(Long id, Character updatedCharacter) {
+  public Character updateCharacter(Long id, Character updatedCharacter) {
+    return characterRepository.findById(id)
+        .map(character -> {
+          character.setName(updatedCharacter.getName());
+          character.setDescription(updatedCharacter.getDescription());
+          character.setUniverse(updatedCharacter.getUniverse());
+          character.setRole(updatedCharacter.getRole());
+          character.setSpecies(updatedCharacter.getSpecies());
+          character.setPowerLevel(updatedCharacter.getPowerLevel());
+          return characterRepository.save(character);
+        })
+        .orElse(null);
+  }
 
-        Character character = repository.findById(id).orElse(null);
+  public void deleteCharacter(Long id) {
+    characterRepository.deleteById(id);
+  }
 
-        if(character != null) {
+  public List<Character> getCharactersByUniverse(String universe) {
+    return characterRepository.findByUniverse(universe);
+  }
 
-            character.setName(updatedCharacter.getName());
-            character.setDescription(updatedCharacter.getDescription());
-            character.setUniverse(updatedCharacter.getUniverse());
-            character.setSpecies(updatedCharacter.getSpecies());
-
-            return repository.save(character);
-        }
-
-        return null;
-    }
-
-    public void deleteCharacter(Long id) {
-        repository.deleteById(id);
-    }
-
-    public List<Character> getCharactersByUniverse(String universe) {
-        return repository.findByUniverse(universe);
-    }
-
-    public List<Character> searchCharacters(String name) {
-        return repository.findByNameContainingIgnoreCase(name);
-    }
+  public List<Character> searchCharactersByName(String name) {
+    return characterRepository.findByName(name);
+  }
 
 }
