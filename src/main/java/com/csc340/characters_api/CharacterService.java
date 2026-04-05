@@ -17,6 +17,24 @@ public class CharacterService {
     return characterRepository.findAll();
   }
 
+  // public List<Character> getAllCharacters() {
+//     List<Character> list = characterRepository.findAll();
+
+//     for (Character c : list) {
+//         System.out.println("DEBUG CHARACTER:");
+//         System.out.println("ID: " + c.getCharacterId());
+//         System.out.println("Name: " + c.getName());
+//         System.out.println("Description: " + c.getDescription());
+//         System.out.println("Universe: " + c.getUniverse());
+//         System.out.println("Role: " + c.getRole());
+//         System.out.println("Species: " + c.getSpecies());
+//         System.out.println("PowerLevel: " + c.getPowerLevel());
+//         System.out.println("------");
+//     }
+
+//     return list;
+// }
+
   public Character createCharacter(Character character) {
     return characterRepository.save(character);
   }
@@ -27,16 +45,20 @@ public class CharacterService {
 
   public Character updateCharacter(Long id, Character updatedCharacter) {
     return characterRepository.findById(id)
-        .map(character -> {
-          character.setName(updatedCharacter.getName());
-          character.setDescription(updatedCharacter.getDescription());
-          character.setUniverse(updatedCharacter.getUniverse());
-          character.setRole(updatedCharacter.getRole());
-          character.setSpecies(updatedCharacter.getSpecies());
-          character.setPowerLevel(updatedCharacter.getPowerLevel());
-          return characterRepository.save(character);
-        })
-        .orElse(null);
+      .map(character -> {
+        character.setName(updatedCharacter.getName());
+        character.setRealName(updatedCharacter.getRealName());
+        character.setDescription(updatedCharacter.getDescription());
+        character.setFullDescription(updatedCharacter.getFullDescription());
+        character.setUniverse(updatedCharacter.getUniverse());
+        character.setRole(updatedCharacter.getRole());
+        character.setSpecies(updatedCharacter.getSpecies());
+        character.setPowerLevel(updatedCharacter.getPowerLevel());
+        character.setAbilities(updatedCharacter.getAbilities());
+        character.setImageUrl(updatedCharacter.getImageUrl());
+        return characterRepository.save(character);
+    })
+    .orElse(null);
   }
 
   public void deleteCharacter(Long id) {

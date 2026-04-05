@@ -1,0 +1,6 @@
+com/csc340/characters_api/CharacterService.class
+com/csc340/characters_api/CharacterApiController.class
+com/csc340/characters_api/CharacterUIController.class
+com/csc340/characters_api/CharacterRepository.class
+com/csc340/characters_api/Character.class
+com/csc340/characters_api/CharactersApiApplication.class

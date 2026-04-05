@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Marvel Heroes</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <style>
+    .about-img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/characters">
+        <img src="img/superhero-logo.png" alt="Superhero logo" width="80" height="65">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/characters">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Character Details
+            </a>
+            <ul class="dropdown-menu">
+              <#list allCharacters as character>
+                  <li><a class="dropdown-item" href="/characters/${character.characterId}">${character.name}</a></li>
+                  <#if character_has_next>
+                      <li><hr class="dropdown-divider"></li>
+                  </#if>
+              </#list>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/about">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/create">Add a Character</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+
+    <div class="row g-4 align-items-center">
+
+      <div class="col-lg-6">
+        <img src="img/marvel heros.jpg" class="img-fluid about-img" alt="Marvel heroes">
+      </div>
+
+
+      <div class="col-lg-6">
+        <h1 class="mb-3">About This Website</h1>
+
+        <p>
+          This website is dedicated to showcasing iconic Marvel heroes and villains, highlighting what makes each character unique.
+          Marvel characters have inspired generations through stories of courage, responsibility, sacrifice, and growth, and this site
+          celebrates those themes in a simple and engaging way.
+        </p>
+
+        <p>
+          I chose the Marvel theme because these characters are more than just superheroes — they represent different personalities,
+          struggles, and values. From Iron Man’s intelligence and innovation to Spider-Man’s sense of responsibility and Hulk’s inner
+          conflict, each character brings something meaningful to the Marvel universe.
+        </p>
+
+        <p>
+          The design of this website focuses on clarity and consistency. Using Bootstrap cards and a responsive layout helps keep the
+          content organized and visually balanced across different screen sizes. The goal was to create a clean, easy-to-navigate site
+          that allows users to explore characters without distraction.
+        </p>
+
+        <p>
+          Overall, this project combines creativity with technical skills, using HTML, CSS, and Bootstrap to build a themed website that
+          is both informative and visually appealing.
+        </p>
+
+        <p class="mb-0">
+          This project also served as an opportunity to practice front-end development skills while working with a familiar and engaging theme.
+          Building the site helped reinforce concepts such as layout structure, responsive design, and user-friendly navigation, while allowing
+          room for creativity through visuals and content organization.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
