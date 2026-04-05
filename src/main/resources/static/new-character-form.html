@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a Character</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+
+  <style>
+    .form-card {
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/navbar-logo.png" alt="Marvel logo" width="80" height="65">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Character Details
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="details.html">Iron Man</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="details.html">Doctor Doom</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="details.html">Spider-Man</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="details.html">Deadpool</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="details.html">Hulk</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="new-character-form.html">
+              Add a Character
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <#if error??>
+      <div class="alert alert-danger">${error}</div>
+    </#if>
+
+    <div class="card form-card shadow-sm p-4">
+      <h1 class="h3 mb-2">Add a New Character</h1>
+      <p class="text-secondary mb-4">
+        Use the form below to submit a new superhero or villain.
+      </p>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Character Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Enter character name"
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="universe" class="form-label">Universe</label>
+          <select class="form-select" id="universe" required>
+            <option value="" selected disabled>Choose a universe</option>
+            <option value="Marvel">Marvel Universe</option>
+            <option value="DC">DC Universe</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Character Role</label>
+          <select class="form-select" id="role" required>
+            <option value="" selected disabled>Select role</option>
+            <option value="Hero">Hero</option>
+            <option value="Villain">Villain</option>
+            <option value="Anti-Hero">Anti-Hero</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Upload Character Image</label>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <div class="mb-4">
+          <label for="description" class="form-label">Short Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            rows="4"
+            placeholder="Briefly describe the character..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Submit Character
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
