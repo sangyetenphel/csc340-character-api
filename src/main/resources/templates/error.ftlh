@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
         <a class="navbar-brand" href="/characters">
-            <img src="img/superhero-logo.png" alt="Superhero logo" width="80" height="65">
+            <img src="/img/superhero-logo.png" alt="Superhero logo" width="80" height="65">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -31,7 +31,7 @@
                 Character Details
                 </a>
                 <ul class="dropdown-menu">
-                <#list allCharacters as character>
+                <#list (allCharacters![]) as character>
                     <li><a class="dropdown-item" href="/characters/${character.characterId}">${character.name}</a></li>
                     <#if character_has_next>
                         <li><hr class="dropdown-divider"></li>
@@ -53,12 +53,12 @@
     </nav>
 
     <div class="container mt-5">
-        <div class="alert alert-danger">
-            <h4>Character not found</h4>
-            <p>Please check the ID and try again.</p>
+       <div class="alert alert-danger">
+            <h4>Oops! Something went wrong</h4>
+            <p>The page you are looking for does not exist or the resource could not be found.</p>
         </div>
 
-        <a href="/characters" class="btn btn-primary">Back</a>
+        <a href="/characters" class="btn btn-primary">Back to Home</a>
     </div>
 </body>
 </html>

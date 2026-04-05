@@ -14,8 +14,6 @@ public class Character {
   private String name;
 
   private String realName;
-
-  @Column(nullable = false)
   private String description;
 
   @Column(columnDefinition = "TEXT")
