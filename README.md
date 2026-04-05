@@ -371,7 +371,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 ---
 
-# Demo Video
+# CRUD API Demo Video
 
 Demo video showing all API endpoints working:
 
@@ -390,3 +390,10 @@ The demo includes:
 - Filter characters by category
 
 ---
+
+# MVC APP Demo Video
+
+[Watch the Character API Demo]([PASTE_YOUR_ONEDRIVE_LINK_HERE](https://uncg-my.sharepoint.com/:v:/g/personal/f_sangyeten_uncg_edu/IQBsJPLQyDmjQooINfNokgTQAej4U3InJW-lmKUfRUpzdhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gr69bt
+)
+
+https://uncg-my.sharepoint.com/:v:/g/personal/f_sangyeten_uncg_edu/IQBsJPLQyDmjQooINfNokgTQAej4U3InJW-lmKUfRUpzdhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gr69bt
