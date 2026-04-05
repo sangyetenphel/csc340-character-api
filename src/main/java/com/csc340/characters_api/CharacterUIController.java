@@ -53,7 +53,6 @@ public class CharacterUIController {
     @GetMapping("/characters")
     public String getAllCharacters(Model model) {
         model.addAttribute("characters", characterService.getAllCharacters());
-        System.out.println(characterService.getAllCharacters());
         return "character-list";
     }
 
@@ -63,7 +62,7 @@ public class CharacterUIController {
         Character character = characterService.getCharacterById(id);
 
         if (character != null) {
-            model.addAttribute("character", characterService.getCharacterById(id));
+            model.addAttribute("character", character);
             return "character-details";
         } else {
             return "error";

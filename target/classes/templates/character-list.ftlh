@@ -81,7 +81,7 @@
     <div class="row justify-content-center mb-5">
       <div class="col-12 col-md-8 col-lg-6 text-center">
 
-        <h1 class="h3 mb-3">Marvel Heroes & Villains</h1>
+        <h1 class="h3 mb-3">Heroes & Villains</h1>
 
         <!-- <div class="input-group mb-2">
           <input
@@ -125,7 +125,7 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
-        <#list characters as character>
+      <#list characters as character>
 
       <div class="col hero-card"
         data-name="iron man tony stark hero avenger human technology marvel">

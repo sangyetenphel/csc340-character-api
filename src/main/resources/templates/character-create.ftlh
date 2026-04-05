@@ -64,6 +64,11 @@
   </nav>
 
   <main class="container py-5">
+    <#if error??>
+      <div class="alert alert-danger">
+        ${error}
+      </div>
+    </#if>
 
     <div class="card form-card shadow-sm p-4">
       <h1 class="h3 mb-2">Add a New Character</h1>
